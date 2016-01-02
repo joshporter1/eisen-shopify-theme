@@ -196,6 +196,17 @@
     ]
   },
   {
+    "name": "Home page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "homepage_blog_enable",
+        "label": "Enable latest news",
+        "default": false
+      }
+    ]
+  },
+  {
     "name": "Home page - slideshow",
     "settings": [
       {

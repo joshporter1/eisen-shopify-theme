@@ -1,0 +1,34 @@
+<div class="sSlider-wrapper">
+  <div class="sSlider" id="home-slider">
+    {% for i in (1..5) %}
+      {% assign slide = 'hero_slide_' | append: i %}
+      {% assign enabled = slide | append: '_enable' %}
+      {% assign img = slide | append: '.jpg' %}
+      {% if settings[enabled] %}
+
+        <div class="sSlide">
+          {{ img | asset_url | img_tag: "Slider image" }}        
+        </div>
+      
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<style type="text/css">
+  .sSlide { max-height: 500px; }
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#home-slider').slick({
+    autoplay: true,
+    dots: false,
+    arrows: false
+  });
+
+  $('#home-slider .sSlide').on('click', 'img', function(e){
+    $('#home-slider').slick('slickNext');
+  });
+});
+</script>
