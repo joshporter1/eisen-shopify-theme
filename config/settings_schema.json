@@ -44,6 +44,13 @@
       },
       {
         "type": "color",
+        "id": "color_accent",
+        "label": "Accent",
+        "default": "#cdcdcd",
+        "info": "Used for alerts and standout banners"
+      },
+      {
+        "type": "color",
         "id": "color_borders",
         "label": "Borders",
         "default": "#e5e5e5"
@@ -237,7 +244,7 @@
       },
       {
         "type": "text",
-        "id": "hero_slide_1_cta",
+        "id": "hero_slide_1_subheading",
         "label": "Subheading text"
       },
       {
@@ -268,7 +275,7 @@
       },
       {
         "type": "text",
-        "id": "hero_slide_2_cta",
+        "id": "hero_slide_2_subheading",
         "label": "Subheading text"
       },
       {
@@ -299,7 +306,7 @@
       },
       {
         "type": "text",
-        "id": "hero_slide_3_cta",
+        "id": "hero_slide_3_subheading",
         "label": "Subheading text"
       },
       {
@@ -330,7 +337,7 @@
       },
       {
         "type": "text",
-        "id": "hero_slide_4_cta",
+        "id": "hero_slide_4_subheading",
         "label": "Subheading text"
       },
       {
@@ -361,13 +368,29 @@
       },
       {
         "type": "text",
-        "id": "hero_slide_5_cta",
+        "id": "hero_slide_5_subheading",
         "label": "Subheading text"
       },
       {
         "type": "text",
         "id": "hero_slide_5_link",
         "label": "Link URL"
+      }
+    ]
+  },
+  {
+    "name": "Home page - Featured Products",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background image"
+      },
+      {
+        "type": "image",
+        "id": "featured_products_bg.jpg",
+        "label": "Image",
+        "max-width": 2000,
+        "info": "1800 x 1000px .jpg recommended"
       }
     ]
   },

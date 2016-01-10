@@ -4,10 +4,41 @@
       {% assign slide = 'hero_slide_' | append: i %}
       {% assign enabled = slide | append: '_enable' %}
       {% assign img = slide | append: '.jpg' %}
+      {% assign heading = slide | append: '_heading' %}
+      {% assign subheading = slide | append: '_subheading' %}
+      {% assign slideLink = slide | append: '_link' %}
+
       {% if settings[enabled] %}
 
         <div class="sSlide">
-          {{ img | asset_url | img_tag: "Slider image" }}        
+          <div class="sSlide-badge medium-down--show large--hide">
+            {% if settings[heading] != blank %}
+              <h3>
+                <a href="{{ settings[slideLink] }}" class="sSlide-header">{{ settings[heading] }}</a>
+              </h3>
+            {% endif %}
+
+            {% if settings[subheading] != blank %}
+              <h6>
+                <a href="{{ settings[slideLink] }}" class="sSlide-subheader">{{ settings[subheading] }}</a>
+              </h6>
+            {% endif %}
+          </div>
+
+          <div class="sSlide-badge medium-down--hide">
+            {% if settings[heading] != blank %}
+              <h1>
+                <a href="{{ settings[slideLink] }}" class="sSlide-header">{{ settings[heading] }}</a>
+              </h1>
+            {% endif %}
+
+            {% if settings[subheading] != blank %}
+              <h4>
+                <a href="{{ settings[slideLink] }}" class="sSlide-subheader">{{ settings[subheading] }}</a>
+              </h4>
+            {% endif %}
+          </div>
+          {{ img | asset_url | img_tag: "Slider image" }}
         </div>
       
       {% endif %}
@@ -15,15 +46,11 @@
   </div>
 </div>
 
-<style type="text/css">
-  .sSlide { max-height: 500px; }
-</style>
-
 <script type="text/javascript">
 $(document).ready(function(){
   $('#home-slider').slick({
     autoplay: true,
-    dots: false,
+    dots: true,
     arrows: false
   });
 

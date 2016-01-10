@@ -80,6 +80,7 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
 // Timber Colors
 $colorPrimary: {{ settings.color_primary }};
 $colorSecondary: {{ settings.color_secondary }};
+$colorAccent: {{ settings.color_accent }};
 
 // Button colors
 $colorBtnPrimary: $colorPrimary;
@@ -730,8 +731,11 @@ body {
 
 .main-content {
   display: block;
-  margin-top: $gutter;
-  padding-bottom: $gutter * 2;
+
+  &.wrapper {
+    margin-top: $gutter;
+    padding-bottom: $gutter * 2;
+  }
 }
 
 /*============================================================================
@@ -2183,6 +2187,7 @@ label.error {
   background-color: $colorFooterBg;
   padding: $gutter 0;
   color: $colorFooterText;
+  border-top: 5px solid $colorBtnPrimary;
 
   @include at-query ($min, $large) {
     padding: ($gutter * 2) 0;
